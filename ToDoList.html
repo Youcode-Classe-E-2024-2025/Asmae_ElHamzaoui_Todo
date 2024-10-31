@@ -62,14 +62,17 @@
 
                <label>Description</label>
                <textarea id="description" name="description" required></textarea>
-
+            
                <label>Date</label>
                <input type="date" id="date" name="date" required>
-               <label>Status</label>
-               <input type="radio" id="radio" name="radio" required >ToDo
-               <input type="radio" id="radio" name="radio" required >Doing
-               <input type="radio" id="radio" name="radio" required >Done
-
+              
+               <label>Statut</label>
+               <input type="radio" id="todo" name="status" value="todo" required >
+               <label>A faire</label>
+               <input type="radio" id="doing" name="status" value="doing" required >
+               <label>En cours</label>
+               <input type="radio" id="done" name="status" value="done" required >
+               <label>Done</label>
                <button type="submit">Enregistrer</button>
            </form>
         </div>    
