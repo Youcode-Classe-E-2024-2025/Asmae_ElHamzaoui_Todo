@@ -11,13 +11,15 @@
 
 
 <body>
+
+      
     <!-- Section 1  -->
      <section class="flex " id="section1">
         <div class="bg-slate-500 w-1/4 h-screen rounded-l-full my-5 ml-7"></div>
         <div class=" bg-sky-950 w-11/12 mr-7 rounded-lg">
            <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Début Partie 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
              <div class="flex justify-between">
-                <div class="bg-slate-400 ml-7 my-5 w-48 h-10 rounded-lg text-center p-1 text-xl"><button onclick="ouvrir()">Ajouter une
+                <div class="bg-slate-400 ml-7 my-5 w-48 h-10 rounded-lg text-center p-1 text-xl"><button id="ouvrir">Ajouter une
                         tache</button></div>
                 <div class="flex">
                     <div class="text-2xl bg-slate-400 my-5 mr-2 w-10 h-10 rounded-full text-center">🔔</div>
@@ -25,7 +27,7 @@
                     <div class="bg-slate-400 my-5 mr-6 w-10 h-10 rounded-full text-center p-1 font-bold text-xl">&#8942;
                     </div>
                 </div>
-               <!-- Lune pour Dark Mode -->
+                <!-- Lune pour Dark Mode -->
                 <!-- <span class="text-2xl">☀️ </span>  -->
              
             </div> 
@@ -41,43 +43,45 @@
             <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   fin  Partie 2   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
             <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Début  Partie 3  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
             <div class="flex  justify-evenly">
-                <div class="h-96 w-60 rounded-lg p-3 bg-slate-100 text-center">TO DO</div>
-                <div class="h-96 w-60 rounded-lg p-3 bg-slate-50 text-center">Doing</div>
-                <div class="h-96 w-60 rounded-lg p-3 bg-slate-50 text-center">Done</div>
+                <div class="h-96 w-60 rounded-lg p-3 bg-slate-100 text-center" class="task-section" id="todoTasks"><h3>A faire</h3></div>
+                <div class="h-96 w-60 rounded-lg p-3 bg-slate-50 text-center" class="task-section" id="doingTasks"><h3>En cours</h3></div>
+                <div class="h-96 w-60 rounded-lg p-3 bg-slate-50 text-center" class="task-section" id="doneTasks"><h3>Fait</h3></div>
             </div>
+            <!-- <div class="task-section" id="todoTasks"><h3>A faire</h3></div>
+            <div class="task-section" id="doingTasks"><h3>En cours</h3></div>
+            <div class="task-section" id="doneTasks"><h3>Fait</h3></div> -->
             <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  fin  Partie 3   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
         </div>
     </section> 
     <!--  Section 1  -->
-
-    <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  début modal  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
-    
-    <div id="modal" class="modal">
-        <div class="contenu-modal">
-           <span onclick="fermer()" class="fermer">&times;</span>
-           <h2> Ajouter une Tache </h2>
-           <form id="tache-Form">
-               <label>Titre du la tache</label>
-               <input type="text" id="titre" name="titre" required>
-
-               <label>Description</label>
-               <textarea id="description" name="description" required></textarea>
-            
-               <label>Date</label>
-               <input type="date" id="date" name="date" required>
-              
-               <label>Statut</label>
-               <input type="radio" id="todo" name="status" value="todo" required >
-               <label>A faire</label>
-               <input type="radio" id="doing" name="status" value="doing" required >
-               <label>En cours</label>
-               <input type="radio" id="done" name="status" value="done" required >
-               <label>Done</label>
-               <button type="submit">Enregistrer</button>
-           </form>
-        </div>    
-    </div>
-  <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  fin modal  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+                        <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  début modal  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+                        <div id="modal" class="modal">
+                            <div class="contenu-modal">
+                               <span onclick="fermer()" class="fermer">&times;</span>
+                               <h2 style="text-align:center;"> Ajouter une Tache </h2>
+                               <form id="taskForm">
+                                   <label style="text-align: center;">Titre du la tache</label>
+                                   <input type="text" id="title" name="title" required>
+                    
+                                   <label>Description</label>
+                                   <textarea id="description" name="description" required></textarea>
+                                
+                                   <label>Date</label>
+                                   <input type="date" id="date" name="date" required>
+                                  
+                                   <p>Statut</p>
+                                   <input type="radio" id="todo" name="status" value="todo" required >
+                                   <label>A faire</label>
+                                   <input type="radio" id="doing" name="status" value="doing" required >
+                                   <label>En cours</label>
+                                   <input type="radio" id="done" name="status" value="done" required >
+                                   <label>Done</label>
+                                   <button id="filmora"type="submit">Enregistrer</button>
+                               </form>
+                            </div>    
+                        </div>
+                      <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  fin modal  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+  
 <script src="/ToDoList.js"></script>
 </body>
 

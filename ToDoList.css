@@ -2,21 +2,77 @@
     display:none;
     height: 100%;
     width: 100%;
-    background-color: rgb(213, 197, 228);
     position:fixed;
 }
 .contenu-modal{
     position:relative;
-    margin:10% auto;
+    margin:20px auto;
     padding:20px;
     background-color: bisque;
-    width: 300px;
+    width: 400px;
+    height: 460px;
     border-radius:8px;
 }
+#title{
+    width: 350px;
+    height: 40px;  
+    margin:10px;
+    border: 1px solid black; 
+}
+#description{
+    width: 350px;
+    height: 80px;
+    margin:10px;  
+    border: 1px solid black;  
+}
+#date{
+    width: 350px;
+    height: 40px; 
+    margin:10px; 
+    border: 1px solid black; 
+}
+#todo{
+    width:20px;
+    height:20px; 
+    margin-top:10px;
+    margin-left:60px;
+    
+}
+#doing{
+    width:20px;
+    height:20px; 
+    margin-top:10px;
+    margin-left:10px;
+}
+#done{
+    width:20px;
+    height:20px;
+    margin-top:10px;
+    margin-left:10px; 
+}
+
+#filmora{
+    width:150px;
+    height:35px; 
+    border: 1px solid black;
+    margin:10px;
+    margin-left: 30%;
+    border-radius:5px;
+    background-color: rgb(103, 169, 227);
+}
+
+
+
 .fermer{
     position:absolute;
     top:10px;
     right: 15px;
     font-size:24px;
     cursor:pointer;
+}
+.task-section{
+    margin:20px;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:5px;
 }
