@@ -12,12 +12,11 @@
 <body>
     <!--  Section 1  -->
     <section class="flex ">
-
         <div class="bg-slate-500 w-1/4 h-screen rounded-l-full my-5 ml-7"></div>
         <div class=" bg-sky-950 w-11/12 mr-7 rounded-lg">
-            <!-- Début Partie 1 -->
+            <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Début Partie 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
             <div class="flex justify-between">
-                <div class="bg-slate-400 ml-7 my-5 w-48 h-10 rounded-lg text-center p-1 text-xl"><button>Ajouter une
+                <div class="bg-slate-400 ml-7 my-5 w-48 h-10 rounded-lg text-center p-1 text-xl"><button onclick="ajouterTache()">Ajouter une
                         tache</button></div>
                 <div class="flex">
                     <div class="text-2xl bg-slate-400 my-5 mr-2 w-10 h-10 rounded-full text-center">🔔</div>
@@ -26,37 +25,51 @@
                     </div>
                 </div>
                 <!-- Lune pour Dark Mode -->
-                <!-- <span class="text-2xl">☀️
-              </span>  -->
-                <!-- fin  Partie 1 -->
+                <!-- <span class="text-2xl">☀️ </span>  -->
+             
             </div>
-            <!-- Début  Partie 2 -->
+            <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%  fin  Partie 1  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+            
+            <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   Début  Partie 2  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
             <div class="flex  justify-center">
                 <div><input class="my-6 mr-4 w-96 h-10 rounded-full p-3" type="text"
                         placeholder="Rechercher une tache"></div>
                 <div class=" bg-slate-400 my-6 mr-2 w-28 h-10 rounded-full text-center p-2 "><button>Rechercher</button>
                 </div>
             </div>
-            <!-- fin  Partie 2 -->
-              <!-- Début  Partie 3-->
+            <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   fin  Partie 2   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+            <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Début  Partie 3  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
             <div class="flex  justify-evenly">
                 <div class="h-96 w-60 rounded-lg p-3 bg-slate-100 text-center">TO DO</div>
                 <div class="h-96 w-60 rounded-lg p-3 bg-slate-50 text-center">Doing</div>
                 <div class="h-96 w-60 rounded-lg p-3 bg-slate-50 text-center">Done</div>
             </div>
-            <!-- fin  Partie 3-->
+            <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  fin  Partie 3   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
         </div>
-
-
-
-
-
-
-
-
-
     </section>
     <!--  Section 1  -->
+
+    <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  début modal  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+    <div id="modal" class="modal">
+        <div class="contenu-modal">
+           <span id="closModalBtn" class="close">&times;</span>
+           <h2> Ajouter une Tache </h2>
+           <form id="tache-Form">
+               <label>Titre du la tache</label>
+               <input type="text" id="titre" name="titre" required>
+
+               <label>Description</label>
+               <textarea id="description" name="description" required></textarea>
+
+               <label>Date</label>
+               <input type="date" id="date" name="date" required>
+
+               <button type="submit">Enregistrer</button>
+           </form>
+        </div>    
+    </div>
+  <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  fin modal  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
 </body>
 
 </html>
