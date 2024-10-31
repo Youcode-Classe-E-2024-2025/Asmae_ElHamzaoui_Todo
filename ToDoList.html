@@ -6,18 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link src="/ToDoList.css">
+    <link rel="stylesheet" href="/ToDoList.css">
 </head>
 
 
 <body>
-    <!--  Section 1  -->
-    <section class="flex ">
+    <!-- Section 1  -->
+     <section class="flex " id="section1">
         <div class="bg-slate-500 w-1/4 h-screen rounded-l-full my-5 ml-7"></div>
         <div class=" bg-sky-950 w-11/12 mr-7 rounded-lg">
-            <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Début Partie 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
-            <div class="flex justify-between">
-                <div class="bg-slate-400 ml-7 my-5 w-48 h-10 rounded-lg text-center p-1 text-xl"><button onclick="ajouterTache()">Ajouter une
+           <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Début Partie 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+             <div class="flex justify-between">
+                <div class="bg-slate-400 ml-7 my-5 w-48 h-10 rounded-lg text-center p-1 text-xl"><button onclick="ouvrir()">Ajouter une
                         tache</button></div>
                 <div class="flex">
                     <div class="text-2xl bg-slate-400 my-5 mr-2 w-10 h-10 rounded-full text-center">🔔</div>
@@ -25,10 +25,10 @@
                     <div class="bg-slate-400 my-5 mr-6 w-10 h-10 rounded-full text-center p-1 font-bold text-xl">&#8942;
                     </div>
                 </div>
-                <!-- Lune pour Dark Mode -->
+               <!-- Lune pour Dark Mode -->
                 <!-- <span class="text-2xl">☀️ </span>  -->
              
-            </div>
+            </div> 
             <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%  fin  Partie 1  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
             
             <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   Début  Partie 2  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
@@ -47,13 +47,14 @@
             </div>
             <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  fin  Partie 3   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
         </div>
-    </section>
+    </section> 
     <!--  Section 1  -->
 
     <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  début modal  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+    
     <div id="modal" class="modal">
         <div class="contenu-modal">
-           <span id="BtnFermee" class="fermer">&times;</span>
+           <span onclick="fermer()" class="fermer">&times;</span>
            <h2> Ajouter une Tache </h2>
            <form id="tache-Form">
                <label>Titre du la tache</label>
@@ -64,13 +65,17 @@
 
                <label>Date</label>
                <input type="date" id="date" name="date" required>
+               <label>Status</label>
+               <input type="radio" id="radio" name="radio" required >ToDo
+               <input type="radio" id="radio" name="radio" required >Doing
+               <input type="radio" id="radio" name="radio" required >Done
 
                <button type="submit">Enregistrer</button>
            </form>
         </div>    
     </div>
   <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  fin modal  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
-
+<script src="/ToDoList.js"></script>
 </body>
 
 </html>
