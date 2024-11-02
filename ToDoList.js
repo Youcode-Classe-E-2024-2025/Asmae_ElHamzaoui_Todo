@@ -50,3 +50,25 @@ function saveTask() {
     updateTaskCounts();
   }
   // enregistrement de la tache 
+
+// Affichage de  la tache dans la partie convenable
+  function displayTasks() {
+    const statuses = ["todo", "doing", "done"];
+   
+    statuses.forEach(status => {
+      const taskList = document.getElementById(`${status}Tasks`);
+      taskList.innerHTML = "";
+
+      const filteredTasks = tasks
+        .filter(task => task.status === status)
+        .sort((a, b) => new Date(a.date) - new Date(b.date));
+
+      filteredTasks.forEach(task => {
+        const taskItem = document.createElement("li");
+        taskItem.className = getPriorityClass(task.priority);
+        taskItem.innerHTML = getTaskHTML(task);
+        taskList.appendChild(taskItem);
+      });
+    });
+  }
+  // Affichage de  la tache dans la partie convenable
