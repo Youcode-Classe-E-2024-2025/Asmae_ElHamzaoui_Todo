@@ -74,19 +74,20 @@ function saveTask() {
   // recupérer la priorité de la tache
   function getPriorityClass(priority) {
     return {
-      "P1": "p-4 bg-red-500 text-white rounded shadow",
-      "P2": "p-4 bg-orange-500 text-white rounded shadow",
-      "P3": "p-4 bg-green-500 text-white rounded shadow"
+        "P1": "p-4 border-4 border-red-500 text-black rounded shadow",
+        "P2": "p-4 border-4 border-orange-500 text-black rounded shadow",
+        "P3": "p-4 border-4 border-green-500 text-black rounded shadow"
     }[priority];
-  }
-  //recupérer la priorité de la tache
+}
+
+  //recupérer les infos avant la modification de la tache
   function getTaskHTML(task) {
     return `
       <strong>${task.title}</strong><br>${task.description}<br><small>${task.date}</small>
       <div class="flex space-x-2 mt-2">
         <button onclick="editTask('${task.title}', '${task.description}', '${task.date}', '${task.priority}', '${task.status}')"
-          class="px-2 py-1 bg-yellow-50 text-black rounded">Modifier</button>
-        <button onclick="deleteTask('${task.title}', '${task.date}')" class="px-2 py-1 bg-gray-700 text-white rounded">Supprimer</button>
+          class="px-2 py-1 bg-cyan-700 text-white rounded">Modifier</button>
+        <button onclick="deleteTask('${task.title}', '${task.date}')" class="px-2 py-1 bg-cyan-900 text-white rounded">Supprimer</button>
       </div>
     `;
   }
