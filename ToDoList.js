@@ -1,4 +1,3 @@
-
 let tasks = [];
 let editingTask = null;
 
@@ -74,20 +73,19 @@ function saveTask() {
   // recupérer la priorité de la tache
   function getPriorityClass(priority) {
     return {
-        "P1": "p-4 border-4 border-red-500 text-black rounded shadow",
-        "P2": "p-4 border-4 border-orange-500 text-black rounded shadow",
-        "P3": "p-4 border-4 border-green-500 text-black rounded shadow"
+      "P1": "p-4 bg-red-500 text-white rounded shadow",
+      "P2": "p-4 bg-orange-500 text-white rounded shadow",
+      "P3": "p-4 bg-green-500 text-white rounded shadow"
     }[priority];
-}
-
-  //recupérer les infos avant la modification de la tache
+  }
+  //recupérer la priorité de la tache
   function getTaskHTML(task) {
     return `
       <strong>${task.title}</strong><br>${task.description}<br><small>${task.date}</small>
       <div class="flex space-x-2 mt-2">
         <button onclick="editTask('${task.title}', '${task.description}', '${task.date}', '${task.priority}', '${task.status}')"
-          class="px-2 py-1 bg-cyan-700 text-white rounded">Modifier</button>
-        <button onclick="deleteTask('${task.title}', '${task.date}')" class="px-2 py-1 bg-cyan-900 text-white rounded">Supprimer</button>
+          class="px-2 py-1 bg-yellow-400 text-white rounded"><i class="fa-solid fa-pen-to-square"></i></button>
+        <button onclick="deleteTask('${task.title}', '${task.date}')" class="px-2 py-1 bg-red-700 text-white rounded"><i class="fa-solid fa-trash"></i></button>
       </div>
     `;
   }
@@ -114,17 +112,13 @@ function saveTask() {
 
    button.addEventListener('click', () => {
     if (mode === 0) {
-        colorBox.classList.remove('bg-gradient-to-r', 'from-sky-600', 'to-sky-950');
-        colorBox.classList.add('bg-gradient-to-r', 'from-indigo-300', 'to-indigo-900');
-        colorBox1.classList.remove('bg-gradient-to-r', 'from-sky-600', 'to-sky-950');
-        colorBox1.classList.add('bg-gradient-to-r', 'from-indigo-900', 'to-indigo-300');
-        mode = 1; // Update mode to indicate the first color set is active
+        body.classList.remove('bg-gray-50');
+        body.classList.add('bg-slate-900');
+        mode = 1;
     } else {
-        colorBox.classList.remove('bg-gradient-to-r', 'from-indigo-300', 'to-indigo-900');
-        colorBox.classList.add('bg-gradient-to-r', 'from-sky-600', 'to-sky-950');
-        colorBox1.classList.remove('bg-gradient-to-r', 'from-indigo-900', 'to-indigo-300');
-        colorBox1.classList.add('bg-gradient-to-r', 'from-sky-950', 'to-sky-600');
-        mode = 0; // Update mode to indicate the second color set is active
+        body.classList.remove('bg-slate-900');
+        body.classList.add('bg-gray-50');
+        mode=0;
     }
 });
 //changement du mode 
@@ -136,17 +130,19 @@ button1.addEventListener('click', () => {
         list.classList.remove('hidden');
 });
 //l'affichage du menu des taches  
-  function updateTaskCounts() {
-    // Compte le nombre total de tâches
-    document.getElementById("taskCount").innerText = tasks.length;
+function updateTaskCounts() {
+  // Compte le nombre total de tâches
+  document.getElementById("taskCount").innerText = tasks.length;
 
-    // Compte le nombre de tâches pour chaque statut
-    const todoCount = tasks.filter(task => task.status === 'todo').length;
-    const doingCount = tasks.filter(task => task.status === 'doing').length;
-    const doneCount = tasks.filter(task => task.status === 'done').length;
+  // Compte le nombre de tâches pour chaque statut
+  const todoCount = tasks.filter(task => task.status === 'todo').length;
+  const doingCount = tasks.filter(task => task.status === 'doing').length;
+  const doneCount = tasks.filter(task => task.status === 'done').length;
 
-    // Met à jour les éléments HTML avec les nouveaux comptes
-    document.getElementById("todoCount").innerText = todoCount;
-    document.getElementById("doingCount").innerText = doingCount;
-    document.getElementById("doneCount").innerText = doneCount;
+  // Met à jour les éléments HTML avec les nouveaux comptes
+  document.getElementById("todoCount").innerText = todoCount;
+  document.getElementById("doingCount").innerText = doingCount;
+  document.getElementById("doneCount").innerText = doneCount;
 }
+
+

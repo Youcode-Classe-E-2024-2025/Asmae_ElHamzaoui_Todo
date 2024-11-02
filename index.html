@@ -1,75 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/ToDoList.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
 </head>
-<body>
+
+<body id="body" class="bg-gray-50">
 
     <!-- Section To Do list -->
-    <section class="flex" id="section1 ">
-        <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Menu des taches  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
-        <div class="bg-gradient-to-r from-sky-600 to-sky-950 w-64  rounded-l-full  my-5 ml-5 mt-10"id="colorBox">
-            <ul class="hidden" id="list">
-                <li class="bg-orange-100 h-12 mt-20 ml-28 ps-6 pt-2 rounded-l-full w-96 font-semibold ">Vie quotidienne</li>
-                <li class="bg-orange-100 h-12 my-3  ml-28 ps-6 pt-2 rounded-l-full w-96 font-semibold">Travail</li>
-                <li class="bg-orange-100 h-12 my-3  ml-28 ps-6 pt-2 rounded-l-full w-96 font-semibold">Activité</li>
-                <li class="bg-orange-100 h-12 my-3  ml-28 ps-6 pt-2 rounded-l-full w-96 font-semibold">Sport</li>
-                <li class="bg-orange-100 h-12 my-3  ml-28 ps-6 pt-2 rounded-l-full w-96 font-semibold">Alimentation</li>
-                <li class="bg-orange-100 h-12 my-3  ml-28 ps-6 pt-2 rounded-l-full w-96 font-semibold">Eduaction</li>
-                <li class="bg-orange-100 h-12 my-3  ml-28 ps-6 pt-2 rounded-l-full w-96 font-semibold">Projet</li>
-            </ul>
-        </div>    
-       <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Menu des taches %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
-       <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Place d'affichage des taches %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
-        <div class=" bg-gradient-to-r from-sky-950 to-sky-600 w-10/12 mr-5 h-screen rounded-lg mt-5 " id="colorBox1">
-            <div class="flex justify-between">
-                <div class="bg-orange-100 ml-10 my-5 w-48 h-10 rounded-lg text-center p-1 text-xl">
-                    <button onclick="openModal()">Ajouter une tache</button>
+    <section  id="section1">
+        
+            <div class="mx-4 flex justify-between">
+                
+
+                <div class="flex justify-center items-center ">
+                    <button onclick="openModal()" type="button" class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl font-medium rounded-lg  px-5 py-2.5 text-center me-2 mb-2">
+                        Ajouter une tache
+                    </button>
                 </div>
                 <div class="flex">
-                    <button class="text-2xl bg-orange-100 my-5 mr-2 w-10 h-10 rounded-full text-center">🔔
-                        <span id="taskCount" class="absolute top-16 right-36 bg-red-600 text-white rounded-full px-1 text-xs">0</span>
-                    </button>
-                    <button class="text-2xl bg-orange-100 my-5 mr-2 w-10 h-10 rounded-full text-center" id="toggleMode" >🌙</button>
-                    <button class="bg-orange-100 my-5 mr-6 w-10 h-10 rounded-full text-center p-1 font-bold text-xl" id="param">&#8942;</button>  
+                    <div class="relative inline-block">
+                        <button class="text-2xl bg-gray-100 my-5 mr-2 w-10 h-10 rounded-full text-center">
+                            <i class="fa-solid fa-bell"></i>
+                            <span id="taskCount" class="absolute top-6 right-3 bg-red-600 text-white rounded-full px-1 text-xs transform translate-x-1/2 -translate-y-1/2">0</span>
+                        </button>
+                    </div>
+                    <button class="text-2xl bg-gray-100 my-5 mr-2 w-10 h-10 rounded-full text-center"
+                        id="toggleMode"><i class="fa-solid fa-circle-half-stroke"></i></button>
+                    <button class="bg-gray-100 my-5  w-10 h-10 rounded-full text-center p-1 font-bold text-xl"
+                        id="param">&#8942;</button>
                 </div>
             </div>
-            <div class="flex  justify-center">
-                <div><input class="my-6 mr-4 w-96 h-10 rounded-full p-3" type="text" placeholder="Rechercher une tache"></div>
-                <div class=" bg-orange-100 my-6 mr-2 w-28 h-10 rounded-full text-center p-2 "><button>Rechercher</button></div>  
+            <div class="flex justify-center">
+                <div>
+                    <input class="my-6 h-10 rounded rounded-r-none p-3 focus:outline-none sm:w-64 md:w-80 lg:w-96 " type="text" placeholder="Rechercher une tache">
+                </div>
+                <div class=" bg-blue-600 text-white  my-6  h-10 rounded text-center p-2 rounded-l-none"><button>Rechercher</button>
+                </div>
             </div>
             <!-- Affichage des 3 status -->
-            <div class="mt-4 w-full max-w-4xl">
-                    <div class="grid grid-cols-3 gap-4">
-                        <div class="ml-5">
-                            <h4 class="text-xl font-medium mb-2 ps-32 text-cyan-50">To-Do <span id="todoCount" class="bg-red-600 text-white rounded-full px-1 text-xs">0</span></h4>
-                            <ul id="todoTasks" class="space-y-2 bg-orange-100 p-4 ml-8 rounded"></ul>
-                        </div>
-                        <div  class="ml-5">
-                            <h4 class="text-xl font-medium mb-2 ps-32 text-cyan-50">Doing <span id="doingCount" class="bg-red-600 text-white rounded-full px-1 text-xs">0</span></h4>
-                            <ul id="doingTasks" class="space-y-2 bg-orange-100 p-4 ml-8 rounded"></ul>
-                        </div>
-                        <div  class="ml-5">
-                            <h4 class="text-xl font-medium mb-2 ps-32 text-cyan-50">Done <span id="doneCount" class="bg-red-600 text-white rounded-full px-1 text-xs">0</span></h4>
-                            <ul id="doneTasks" class="space-y-2 bg-orange-100 p-4 ml-8 rounded"></ul>
-                        </div>
+            <div class="container my-12 mx-auto px-4 md:px-12">
+                <div class="flex flex-wrap justify-center mt-10">
+
+                    <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+                        <button class="border-2 border-dashed  font-medium mb-2 py-1  w-full  rounded border-sky-500 text-sky-500">To-Do <span id="todoCount" class="bg-red-600 text-white rounded-full px-1 text-xs">0</span></button>
+                        <ul id="todoTasks" class="max-h-[400px] overflow-y-auto space-y-2 bg-gray-100 p-4 rounded"></ul>
                     </div>
+                    <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3 ">
+                        <button class="border-2 border-dashed  font-medium mb-2 py-1  w-full rounded border-sky-500 text-sky-500">In progress <span id="doingCount" class="bg-red-600 text-white rounded-full px-1 text-xs">0</span></button>
+                        <ul id="doingTasks" class="w-full space-y-2 bg-gray-100 p-4 rounded"></ul>
+                    </div>
+                    <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+                        <button class="border-2 border-dashed  font-medium mb-2 py-1 w-full rounded border-sky-500 text-sky-500">Done <span id="doneCount" class="bg-red-600 text-white rounded-full px-1 text-xs">0</span></button>
+                        <ul id="doneTasks" class="w-full space-y-2 bg-gray-100 p-4 rounded "></ul>
+                    </div>
+
+
+                </div>
             </div>
-            <!-- Affichage des 3 status -->
-        <div>
-        <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Place d'affichage des taches %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->    
+                <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Place d'affichage des taches %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
     </section>
     <!-- Section To Do list -->
-   
+
 
     <!--  Section du Modal  -->
     <section id="section2">
         <div id="taskModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden ">
-            <div class="bg-white p-8 rounded-lg shadow-lg w-1/3">
+            <div class="bg-white p-8 rounded-lg shadow-lg md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
                 <h2 class="text-xl font-semibold mb-4 ml-20" id="modalTitle">Ajouter une tâche</h2>
                 <form id="taskForm">
                     <div class="mb-4">
@@ -87,9 +89,9 @@
                     <div class="mb-4">
                         <label class="block text-sm font-medium">État</label>
                         <div class="flex gap-4">
-                            <label><input type="radio" name="status" value="todo" required/> To-Do</label>
-                            <label><input type="radio" name="status" value="doing"/> Doing</label>
-                            <label><input type="radio" name="status" value="done"/> Done</label>
+                            <label><input type="radio" name="status" value="todo" required /> To-Do</label>
+                            <label><input type="radio" name="status" value="doing" /> Doing</label>
+                            <label><input type="radio" name="status" value="done" /> Done</label>
                         </div>
                     </div>
                     <div class="mb-4">
@@ -101,15 +103,15 @@
                         </select>
                     </div>
                     <div class="flex justify-end">
-                        <button type="button" onclick="saveTask()"class="px-4 py-2 bg-indigo-800 text-white rounded hover:bg-indigo-700">Enregistrer</button>    
-                        <button type="button" onclick="closeModal()"class="ml-2 px-4 py-2 bg-indigo-500 text-white rounded hover:bg-indigo-400">Annuler</button>          
+                        <button onclick="saveTask()" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Enregistrer</button>
+                        <button onclick="closeModal()" type="button" class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Anuler</button>
                     </div>
                 </form>
             </div>
         </div>
     </section>
     <!--  Section du Modal  -->
-   
+
 
 
 
