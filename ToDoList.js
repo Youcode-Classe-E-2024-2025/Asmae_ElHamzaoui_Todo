@@ -106,3 +106,24 @@ function saveTask() {
     updateTaskCounts();
   }
   //suppression de la tache
+
+//changement du mode 
+   const button = document.getElementById('toggleMode');
+   let mode = 0; 
+
+   button.addEventListener('click', () => {
+    if (mode === 0) {
+        colorBox.classList.remove('bg-gradient-to-r', 'from-sky-600', 'to-sky-950');
+        colorBox.classList.add('bg-gradient-to-r', 'from-indigo-300', 'to-indigo-900');
+        colorBox1.classList.remove('bg-gradient-to-r', 'from-sky-600', 'to-sky-950');
+        colorBox1.classList.add('bg-gradient-to-r', 'from-indigo-900', 'to-indigo-300');
+        mode = 1; // Update mode to indicate the first color set is active
+    } else {
+        colorBox.classList.remove('bg-gradient-to-r', 'from-indigo-300', 'to-indigo-900');
+        colorBox.classList.add('bg-gradient-to-r', 'from-sky-600', 'to-sky-950');
+        colorBox1.classList.remove('bg-gradient-to-r', 'from-indigo-900', 'to-indigo-300');
+        colorBox1.classList.add('bg-gradient-to-r', 'from-sky-950', 'to-sky-600');
+        mode = 0; // Update mode to indicate the second color set is active
+    }
+});
+//changement du mode 
