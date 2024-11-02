@@ -25,3 +25,28 @@ function closeModal() {
     editingTask = null;
   }
 //Fermeture du modal
+
+// enregistrement de  la tache 
+function saveTask() {
+    const title = document.getElementById("title").value;
+    const description = document.getElementById("description").value;
+    const date = document.getElementById("date").value;
+    const status = document.querySelector("input[name='status']:checked").value;
+    const priority = document.getElementById("priority").value;
+
+    if (editingTask) {
+      editingTask.title = title;
+      editingTask.description = description;
+      editingTask.date = date;
+      editingTask.priority = priority;
+      editingTask.status = status;
+    } else {
+      const newTask = { title, description, date, priority, status };
+      tasks.push(newTask);
+    }
+
+    closeModal();
+    displayTasks();
+    updateTaskCounts();
+  }
+  // enregistrement de la tache 
