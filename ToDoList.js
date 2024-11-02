@@ -71,9 +71,7 @@ function saveTask() {
       });
     });
   }
-  // Affichage de  la tache dans la partie convenable
-
-  // insertion  de  la tache dans la partie convenable
+  // recupérer la priorité de la tache
   function getPriorityClass(priority) {
     return {
       "P1": "p-4 bg-red-500 text-white rounded shadow",
@@ -81,6 +79,7 @@ function saveTask() {
       "P3": "p-4 bg-green-500 text-white rounded shadow"
     }[priority];
   }
+  //recupérer la priorité de la tache
   function getTaskHTML(task) {
     return `
       <strong>${task.title}</strong><br>${task.description}<br><small>${task.date}</small>
@@ -91,5 +90,11 @@ function saveTask() {
       </div>
     `;
   }
-  // insertion  de  la tache dans la partie convenable
- 
+   // Affichage de  la tache dans la partie convenable
+
+   //modification de la tache 
+   function editTask(title, description, date, priority, status) {
+    const task = tasks.find(task => task.title === title && task.date === date);
+    if (task) openModal(task);
+  }
+   //modification de la tache 
