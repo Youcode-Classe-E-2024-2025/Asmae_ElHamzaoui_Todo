@@ -127,3 +127,11 @@ function saveTask() {
     }
 });
 //changement du mode 
+
+//l'affichage du menu des taches  
+const button1 = document.getElementById('param');
+const open=0;
+button1.addEventListener('click', () => {
+        list.classList.remove('hidden');
+});
+//l'affichage du menu des taches  
