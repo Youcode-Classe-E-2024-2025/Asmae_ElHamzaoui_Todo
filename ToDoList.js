@@ -97,4 +97,12 @@ function saveTask() {
     const task = tasks.find(task => task.title === title && task.date === date);
     if (task) openModal(task);
   }
-   //modification de la tache 
+  //modification de la tache 
+
+  //suppression de la tache 
+  function deleteTask(title, date) {
+    tasks = tasks.filter(task => !(task.title === title && task.date === date));
+    displayTasks();
+    updateTaskCounts();
+  }
+  //suppression de la tache
