@@ -12,32 +12,21 @@ function fermer(){
     modal.style.display="none";
     section1.style.display="flex";
 }
-// gestion de la soumission du formulaire
-    
-    taskForm.addEventListener("submit",(event)=>{
-    event.preventDefault(); 
-
-
-    //Récupérer les valeurs des champs 
-    const title=document.getElementById("title").value;
-    console.log(title);
-    const description=document.getElementById("description").value;
-    console.log(description);
-    const date=document.getElementById("date").value;
-    console.log(date);
-    const status=document.querySelector('input[name="status"]:checked').value;
-    console.log(status);
-
-    //Créer un élément de tache
+//testing another way
+const titre=document.getElementById("title").value;
+const description=document.getElementById("description").value;
+const date=document.getElementById("date").value;
+const test=document.getElementById("filmora");
+const status=document.querySelector('input[name="status"]:checked').value;
+ test.addEventListener("clisk",()=>{     
     const task=document.createElement("div");
-    task.classList.add("task");
-    task.innerHTML=`
-         <h4>${title}</h4>
-         <p>${description}</p>
-         <p>Date:${date}</p>
-    `;
-    //Ajouter la tache à la section correspondante
-
+        task.classList.add("task");
+        task.innerHTML=`
+             <h4>${titre}</h4>
+             <p>${description}</p>
+             <p>Date:${date}</p>
+        `;
+         //Ajouter la tache à la section correspondante
     if(status==="todo"){
         document.getElementById("todoTasks").appendChild(task);
     }else if(status==="doing"){
@@ -45,8 +34,6 @@ function fermer(){
     }else if(status==="done"){
         document.getElementById("doneTasks").appendChild(task);
     }
-   //Fermer et réinitialiser le modal
-   modal.style.display="none";
-   taskForm.reset();
-});
+ });
+
 
