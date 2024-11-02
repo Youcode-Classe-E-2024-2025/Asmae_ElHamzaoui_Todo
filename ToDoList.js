@@ -17,3 +17,11 @@ function openModal(task = null) {
   }
 }
 //Ouverture du modal
+
+//Fermeture du modal
+function closeModal() {
+    document.getElementById("taskModal").classList.add("hidden");
+    document.getElementById("taskForm").reset();
+    editingTask = null;
+  }
+//Fermeture du modal
