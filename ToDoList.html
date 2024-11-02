@@ -14,48 +14,48 @@
         <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Menu des taches  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
         <div class="bg-gradient-to-r from-sky-600 to-sky-950 w-64  rounded-l-full  my-5 ml-5 mt-10"id="colorBox">
             <ul class="hidden" id="list">
-                <li class="bg-gray-200 h-12 mt-20 ml-28 ps-6 pt-2 rounded-l-full w-96 font-semibold ">Vie quotidienne</li>
-                <li class="bg-gray-200 h-12 my-3  ml-28 ps-6 pt-2 rounded-l-full w-96 font-semibold">Travail</li>
-                <li class="bg-gray-200 h-12 my-3  ml-28 ps-6 pt-2 rounded-l-full w-96 font-semibold">Activité</li>
-                <li class="bg-gray-200 h-12 my-3  ml-28 ps-6 pt-2 rounded-l-full w-96 font-semibold">Sport</li>
-                <li class="bg-gray-200 h-12 my-3  ml-28 ps-6 pt-2 rounded-l-full w-96 font-semibold">Alimentation</li>
-                <li class="bg-gray-200 h-12 my-3  ml-28 ps-6 pt-2 rounded-l-full w-96 font-semibold">Eduaction</li>
-                <li class="bg-gray-200 h-12 my-3  ml-28 ps-6 pt-2 rounded-l-full w-96 font-semibold">Projet</li>
+                <li class="bg-orange-100 h-12 mt-20 ml-28 ps-6 pt-2 rounded-l-full w-96 font-semibold ">Vie quotidienne</li>
+                <li class="bg-orange-100 h-12 my-3  ml-28 ps-6 pt-2 rounded-l-full w-96 font-semibold">Travail</li>
+                <li class="bg-orange-100 h-12 my-3  ml-28 ps-6 pt-2 rounded-l-full w-96 font-semibold">Activité</li>
+                <li class="bg-orange-100 h-12 my-3  ml-28 ps-6 pt-2 rounded-l-full w-96 font-semibold">Sport</li>
+                <li class="bg-orange-100 h-12 my-3  ml-28 ps-6 pt-2 rounded-l-full w-96 font-semibold">Alimentation</li>
+                <li class="bg-orange-100 h-12 my-3  ml-28 ps-6 pt-2 rounded-l-full w-96 font-semibold">Eduaction</li>
+                <li class="bg-orange-100 h-12 my-3  ml-28 ps-6 pt-2 rounded-l-full w-96 font-semibold">Projet</li>
             </ul>
         </div>    
        <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Menu des taches %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
        <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Place d'affichage des taches %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
         <div class=" bg-gradient-to-r from-sky-950 to-sky-600 w-10/12 mr-5 h-screen rounded-lg mt-5 " id="colorBox1">
             <div class="flex justify-between">
-                <div class="bg-slate-400 ml-10 my-5 w-48 h-10 rounded-lg text-center p-1 text-xl">
+                <div class="bg-orange-100 ml-10 my-5 w-48 h-10 rounded-lg text-center p-1 text-xl">
                     <button onclick="openModal()">Ajouter une tache</button>
                 </div>
                 <div class="flex">
-                    <button class="text-2xl bg-slate-400 my-5 mr-2 w-10 h-10 rounded-full text-center">🔔
+                    <button class="text-2xl bg-orange-100 my-5 mr-2 w-10 h-10 rounded-full text-center">🔔
                         <span id="taskCount" class="absolute top-16 right-36 bg-red-600 text-white rounded-full px-1 text-xs">0</span>
                     </button>
-                    <button class="text-2xl bg-slate-400 my-5 mr-2 w-10 h-10 rounded-full text-center" id="toggleMode" >🌙</button>
-                    <button class="bg-slate-400 my-5 mr-6 w-10 h-10 rounded-full text-center p-1 font-bold text-xl" id="param">&#8942;</button>  
+                    <button class="text-2xl bg-orange-100 my-5 mr-2 w-10 h-10 rounded-full text-center" id="toggleMode" >🌙</button>
+                    <button class="bg-orange-100 my-5 mr-6 w-10 h-10 rounded-full text-center p-1 font-bold text-xl" id="param">&#8942;</button>  
                 </div>
             </div>
             <div class="flex  justify-center">
                 <div><input class="my-6 mr-4 w-96 h-10 rounded-full p-3" type="text" placeholder="Rechercher une tache"></div>
-                <div class=" bg-slate-400 my-6 mr-2 w-28 h-10 rounded-full text-center p-2 "><button>Rechercher</button></div>  
+                <div class=" bg-orange-100 my-6 mr-2 w-28 h-10 rounded-full text-center p-2 "><button>Rechercher</button></div>  
             </div>
             <!-- Affichage des 3 status -->
             <div class="mt-4 w-full max-w-4xl">
                     <div class="grid grid-cols-3 gap-4">
                         <div class="ml-5">
-                            <h4 class="text-xl font-medium mb-2 ps-32 text-cyan-50">To-Do</h4>
-                            <ul id="todoTasks" class="space-y-2 bg-gray-200 p-4 ml-8 rounded"></ul>
+                            <h4 class="text-xl font-medium mb-2 ps-32 text-cyan-50">To-Do <span id="todoCount" class="bg-red-600 text-white rounded-full px-1 text-xs">0</span></h4>
+                            <ul id="todoTasks" class="space-y-2 bg-orange-100 p-4 ml-8 rounded"></ul>
                         </div>
                         <div  class="ml-5">
-                            <h4 class="text-xl font-medium mb-2 ps-32 text-cyan-50">Doing</h4>
-                            <ul id="doingTasks" class="space-y-2 bg-gray-200 p-4 ml-8 rounded"></ul>
+                            <h4 class="text-xl font-medium mb-2 ps-32 text-cyan-50">Doing <span id="doingCount" class="bg-red-600 text-white rounded-full px-1 text-xs">0</span></h4>
+                            <ul id="doingTasks" class="space-y-2 bg-orange-100 p-4 ml-8 rounded"></ul>
                         </div>
                         <div  class="ml-5">
-                            <h4 class="text-xl font-medium mb-2 ps-32 text-cyan-50">Done</h4>
-                            <ul id="doneTasks" class="space-y-2 bg-gray-200 p-4 ml-8 rounded"></ul>
+                            <h4 class="text-xl font-medium mb-2 ps-32 text-cyan-50">Done <span id="doneCount" class="bg-red-600 text-white rounded-full px-1 text-xs">0</span></h4>
+                            <ul id="doneTasks" class="space-y-2 bg-orange-100 p-4 ml-8 rounded"></ul>
                         </div>
                     </div>
             </div>

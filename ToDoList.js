@@ -135,7 +135,17 @@ button1.addEventListener('click', () => {
         list.classList.remove('hidden');
 });
 //l'affichage du menu des taches  
+  function updateTaskCounts() {
+    // Compte le nombre total de tâches
+    document.getElementById("taskCount").innerText = tasks.length;
 
-function updateTaskCounts() {
-   document.getElementById("taskCount").innerText = tasks.length; 
-  } 
+    // Compte le nombre de tâches pour chaque statut
+    const todoCount = tasks.filter(task => task.status === 'todo').length;
+    const doingCount = tasks.filter(task => task.status === 'doing').length;
+    const doneCount = tasks.filter(task => task.status === 'done').length;
+
+    // Met à jour les éléments HTML avec les nouveaux comptes
+    document.getElementById("todoCount").innerText = todoCount;
+    document.getElementById("doingCount").innerText = doingCount;
+    document.getElementById("doneCount").innerText = doneCount;
+}
