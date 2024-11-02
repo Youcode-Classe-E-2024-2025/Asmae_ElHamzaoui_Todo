@@ -14,13 +14,13 @@
         <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Menu des taches  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
         <div class="bg-gradient-to-r from-sky-600 to-sky-950 w-64  rounded-l-full  my-5 ml-5 mt-10"id="colorBox">
             <ul class="hidden" id="list">
-                <li class="bg-gray-200 h-12 mt-20 ml-28 ps-6 pt-2 rounded-l-full w-96">Vie quotidienne</li>
-                <li class="bg-gray-200 h-12 my-3  ml-28 ps-6 pt-2 rounded-l-full w-96">Travail</li>
-                <li class="bg-gray-200 h-12 my-3  ml-28 ps-6 pt-2 rounded-l-full w-96">Activité</li>
-                <li class="bg-gray-200 h-12 my-3  ml-28 ps-6 pt-2 rounded-l-full w-96">Sport</li>
-                <li class="bg-gray-200 h-12 my-3  ml-28 ps-6 pt-2 rounded-l-full w-96">Alimentation</li>
-                <li class="bg-gray-200 h-12 my-3  ml-28 ps-6 pt-2 rounded-l-full w-96">Eduaction</li>
-                <li class="bg-gray-200 h-12 my-3  ml-28 ps-6 pt-2 rounded-l-full w-96">Projet</li>
+                <li class="bg-gray-200 h-12 mt-20 ml-28 ps-6 pt-2 rounded-l-full w-96 font-semibold ">Vie quotidienne</li>
+                <li class="bg-gray-200 h-12 my-3  ml-28 ps-6 pt-2 rounded-l-full w-96 font-semibold">Travail</li>
+                <li class="bg-gray-200 h-12 my-3  ml-28 ps-6 pt-2 rounded-l-full w-96 font-semibold">Activité</li>
+                <li class="bg-gray-200 h-12 my-3  ml-28 ps-6 pt-2 rounded-l-full w-96 font-semibold">Sport</li>
+                <li class="bg-gray-200 h-12 my-3  ml-28 ps-6 pt-2 rounded-l-full w-96 font-semibold">Alimentation</li>
+                <li class="bg-gray-200 h-12 my-3  ml-28 ps-6 pt-2 rounded-l-full w-96 font-semibold">Eduaction</li>
+                <li class="bg-gray-200 h-12 my-3  ml-28 ps-6 pt-2 rounded-l-full w-96 font-semibold">Projet</li>
             </ul>
         </div>    
        <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Menu des taches %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
@@ -31,7 +31,9 @@
                     <button onclick="openModal()">Ajouter une tache</button>
                 </div>
                 <div class="flex">
-                    <button class="text-2xl bg-slate-400 my-5 mr-2 w-10 h-10 rounded-full text-center">🔔</button>
+                    <button class="text-2xl bg-slate-400 my-5 mr-2 w-10 h-10 rounded-full text-center">🔔
+                        <span id="taskCount" class="absolute top-16 right-36 bg-red-600 text-white rounded-full px-1 text-xs">0</span>
+                    </button>
                     <button class="text-2xl bg-slate-400 my-5 mr-2 w-10 h-10 rounded-full text-center" id="toggleMode" >🌙</button>
                     <button class="bg-slate-400 my-5 mr-6 w-10 h-10 rounded-full text-center p-1 font-bold text-xl" id="param">&#8942;</button>  
                 </div>
@@ -44,15 +46,15 @@
             <div class="mt-4 w-full max-w-4xl">
                     <div class="grid grid-cols-3 gap-4">
                         <div class="ml-5">
-                            <h4 class="text-xl font-medium mb-2 ps-32">To-Do</h4>
+                            <h4 class="text-xl font-medium mb-2 ps-32 text-cyan-50">To-Do</h4>
                             <ul id="todoTasks" class="space-y-2 bg-gray-200 p-4 ml-8 rounded"></ul>
                         </div>
                         <div  class="ml-5">
-                            <h4 class="text-xl font-medium mb-2 ps-32">Doing</h4>
+                            <h4 class="text-xl font-medium mb-2 ps-32 text-cyan-50">Doing</h4>
                             <ul id="doingTasks" class="space-y-2 bg-gray-200 p-4 ml-8 rounded"></ul>
                         </div>
                         <div  class="ml-5">
-                            <h4 class="text-xl font-medium mb-2 ps-32">Done</h4>
+                            <h4 class="text-xl font-medium mb-2 ps-32 text-cyan-50">Done</h4>
                             <ul id="doneTasks" class="space-y-2 bg-gray-200 p-4 ml-8 rounded"></ul>
                         </div>
                     </div>

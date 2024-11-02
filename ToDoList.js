@@ -135,3 +135,7 @@ button1.addEventListener('click', () => {
         list.classList.remove('hidden');
 });
 //l'affichage du menu des taches  
+
+function updateTaskCounts() {
+   document.getElementById("taskCount").innerText = tasks.length; 
+  } 
